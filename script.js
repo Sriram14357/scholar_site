@@ -33,7 +33,7 @@ async function loadScholar() {
                     <h3 class="paper-title">${titleLink}</h3>
                     <p class="paper-authors">${p.authors}</p>
                     <p class="paper-meta">${p.journal} (${p.year}) — Citations: ${p.citations}</p>
-                    ${p.impact_factor ? `<p class="paper-impact">${p.impact_factor} | <a href="https://sci-hub.st/${p.doi}" target="_blank" rel="noopener noreferrer" style="color:#d32f2f; text-decoration:none;">📄 Sci-Hub</a></p>` : ''}
+                    ${p.impact_factor ? `<p class="paper-impact">${p.impact_factor} | <a href="https://sci-hub.st/${p.doi}" target="_blank" rel="noopener noreferrer" style="color:#d32f2f; text-decoration:none;"> 🐦‍⬛ Sci-Hub</a></p>` : ''}
                 </div>
                 <div class="badges">
                     ${p.doi ? `
