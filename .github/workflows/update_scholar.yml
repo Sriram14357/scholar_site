@@ -14,7 +14,9 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install dependencies
-        run: pip install scholarly requests
+        run: |
+          pip install --upgrade pip
+          pip install scholarly requests httpx==0.24.1
       - name: Run Scraper
         run: python update_publications.py
       - name: Commit and Push
