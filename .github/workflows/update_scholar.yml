@@ -1,0 +1,26 @@
+name: Nightly Scholar Update
+on:
+  schedule:
+    - cron: '0 0 * * *' # Every night at midnight
+  workflow_dispatch: # Allows you to click a button to update manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install scholarly requests
+      - name: Run Scraper
+        run: python update_publications.py
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'Scholar-Bot'
+          git config --global user.email 'bot@github.com'
+          git add assets/publications.json
+          git commit -m "Automated update of publications with DOIs" || exit 0
+          git push
