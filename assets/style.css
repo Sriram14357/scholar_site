@@ -11,3 +11,11 @@ h1 { color: #333; margin-bottom: 5px; }
 .paper-meta { color: #666; font-size: 0.85rem; }
 .paper-impact { color: #d32f2f; font-size: 0.8rem; margin: 3px 0; font-weight: 600; }
 .badges { display: flex; gap: 15px; align-items: center; justify-content: flex-end; min-width: 130px; }
+
+/* Mobile responsive layout */
+@media (max-width: 768px) {
+    .paper-card { flex-direction: column; align-items: flex-start; }
+    .paper-info { padding-right: 0; margin-bottom: 15px; }
+    .badges { justify-content: flex-start; width: 100%; }
+    .container { padding: 20px; }
+}
