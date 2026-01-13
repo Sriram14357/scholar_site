@@ -5,6 +5,9 @@ h1 { color: #333; margin-bottom: 5px; }
 .paper-card { display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid #eee; }
 .paper-info { flex: 1; padding-right: 20px; }
 .paper-title { font-size: 1.2rem; color: #1a0dab; margin: 0; font-weight: 500; }
+.paper-title a { color: #1a0dab; text-decoration: none; }
+.paper-title a:hover { text-decoration: underline; color: #0d47a1; }
 .paper-authors { color: #006621; margin: 5px 0; font-size: 0.95rem; }
 .paper-meta { color: #666; font-size: 0.85rem; }
+.paper-impact { color: #d32f2f; font-size: 0.8rem; margin: 3px 0; font-weight: 600; }
 .badges { display: flex; gap: 15px; align-items: center; min-width: 130px; }
