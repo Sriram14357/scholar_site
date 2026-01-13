@@ -1,8 +1,12 @@
 import json
 import requests
-from scholarly import scholarly
+from scholarly import scholarly, ProxyGenerator
 
 def update_data():
+    # Set up a ProxyGenerator object to use free proxies
+    pg = ProxyGenerator()
+    pg.FreeProxies()
+    scholarly.use_proxy(pg)
     print("Fetching data for ID: _-tb2Y8AAAAJ...")
     search_query = scholarly.search_author_id('_-tb2Y8AAAAJ')
     author = scholarly.fill(search_query)
