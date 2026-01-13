@@ -1,6 +1,7 @@
 import json
 import requests
 import time
+from pathlib import Path
 from scholarly import scholarly
 
 def update_data():
@@ -55,9 +56,13 @@ def update_data():
         except Exception as e:
             print(f"Skipping a publication due to error: {e}")
 
-    with open('assets/publications.json', 'w') as f:
+    # Get the directory where this script is located
+    script_dir = Path(__file__).parent
+    output_file = script_dir / 'assets' / 'publications.json'
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(data_to_save, f, indent=4)
-    print("Success! assets/publications.json updated.")
+    print(f"Success! {output_file} updated.")
 
 if __name__ == "__main__":
     update_data()
