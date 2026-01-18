@@ -1,7 +1,7 @@
 name: Nightly Scholar Update
 on:
-  schedule:
-    - cron: '0 0 * * *' # Every night at midnight
+  # schedule:
+  #   - cron: '0 0 * * *' # Every night at midnight - DISABLED due to Google Scholar blocking
   workflow_dispatch: # Allows you to click a button to update manually
 
 jobs:
